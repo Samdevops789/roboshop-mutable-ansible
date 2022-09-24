@@ -10,10 +10,10 @@ payment-dev.roboshop.internal
 shipping-dev.roboshop.internal
 [USER]
 user-dev.roboshop.internal
-[REDIS]
-redis-dev.roboshop.internal
 [RABBITMQ]
 rabbitmq-dev.roboshop.internal
+[REDIS]
+redis-dev.roboshop.internal
 [MONGODB]
 mongodb-dev.roboshop.internal
 [MYSQL]
