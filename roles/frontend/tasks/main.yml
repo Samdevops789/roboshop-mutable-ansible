@@ -1,6 +1,6 @@
-- name: Import Common role
+- name: Import common role
   ansible.builtin.Import_role:
-    name: common
+   name: common
 
 - name: Setup Hostname
   ansible.builtin.shell: set-hostname frontend
