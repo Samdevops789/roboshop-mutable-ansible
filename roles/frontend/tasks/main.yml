@@ -1,4 +1,4 @@
-- name: Import common role
+- name: Import Common role
   ansible.builtin.Import_role:
    name: common
 
