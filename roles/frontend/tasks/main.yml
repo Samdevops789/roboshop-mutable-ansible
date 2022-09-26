@@ -11,5 +11,5 @@
 - name: Download frontend Content & Extract it
   ansible.builtin.unarchive:
     src: "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
-    dest: tmp
+    dest: /tmp
     remote_src: yes
