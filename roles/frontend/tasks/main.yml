@@ -1,3 +1,4 @@
-- name: test
-  debug:
-    msg: hello
+- name: Install the latest version of Nginx
+  ansible.builtin.yum:
+    name: httpd
+    state: installed
