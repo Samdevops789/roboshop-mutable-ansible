@@ -1,3 +1,6 @@
+- name: Setup Hostname
+  ansible.builtin.shell: set-hostname frontend
+
 - name: Install the latest version of Nginx
   ansible.builtin.yum:
     name: nginx
@@ -7,6 +10,7 @@
   ansible.builtin.file:
     path: /usr/share/nginx/html
     state: absent
+
 
 - name: Download frontend Content & Extract it
   ansible.builtin.unarchive:
