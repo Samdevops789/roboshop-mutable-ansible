@@ -2,3 +2,14 @@
   ansible.builtin.copy:
     src: mongodb.repo
     dest: /etc/yum.repos.d/mongodb.repo
+
+- name: Install Mongodb Server
+  ansible.builtin.yum:
+    name: mongodb-org
+    state: Installed
+
+- name: Update Mongodb Listen Address
+  ansible.builtin.replace:
+  path: /etc/mongod.conf
+  regexp: "127.0.0.1"
+  replace: "0.0.0.0"
