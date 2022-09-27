@@ -3,20 +3,20 @@
 
 - name: Install NodeJs
   ansible.builtin.yum:
-   name: nodeJs
-   state: installed
+     name: nodeJs
+     state: installed
 
 - name: Add Roboshop App User
   ansible.builtin.user:
      name: roboshop
      comment: Roboshop Application User
 
-- name: Remove App Content
+- name: Remove Old App Content
   ansible.builtin.file:
     path: /home/roboshop/catalogue
     state: absent
 
-- name: Download catalogue Content & Extract it
+- name: Download Catalogue Content & Extract it
   ansible.builtin.unarchive:
     src: "https://github.com/roboshop-devops-project/catalogue/archive/main.zip"
     dest: /tmp
