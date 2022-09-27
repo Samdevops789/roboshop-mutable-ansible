@@ -35,9 +35,9 @@
   become_user: roboshop
 
 - name: Copy Catalogue SystemD file
-  ansible.builtin.templates:
+  ansible.builtin.template:
     src: systemd.service
-    dest: /etc/systemd.system/catalogue.service
+  dest: /etc/systemd.system/catalogue.service
 
 - name: Restart Catalogue
   ansible.builtin.systemd:
