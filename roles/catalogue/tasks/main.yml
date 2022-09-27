@@ -3,8 +3,8 @@
 
 - name: Install NodeJs
   ansible.builtin.yum:
-     name: NodeJs
-     state: installed
+   name: NodeJs
+   state: installed
 
 - name: Add Roboshop App User
   ansible.builtin.user:
