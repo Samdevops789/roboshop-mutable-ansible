@@ -30,8 +30,8 @@
     login_user: root
     login_password:
           filter: version
-    register: mysql_conn_stat
-    ignore_errors: yes
+  register: mysql_conn_stat
+  ignore_errors: yes
 
 - name: Print
   debug:
