@@ -19,8 +19,8 @@
 
 - name: Handle the error
   block:
-- name: Get MySQL version to check the DB Connection
-  mysql_info:
+  - name: Get MySQL version to check the DB Connection
+    mysql_info:
     login_user: root
     login_password: "{{MYSQL_PASSWORD}}"
     filter: version
