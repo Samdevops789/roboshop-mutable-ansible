@@ -17,7 +17,7 @@
    enabled: yes
 
 
-- name: Handle the error
+- name: Check Default Password
   block:
   - name: Get MySQL version to check the DB Connection
     mysql_info:
@@ -36,7 +36,11 @@
         DEFAULT_PASS: "{{mysql_log['content'] | b64decode | regex_findall('.*temporary password.*') | join(' ') | split(' ') | last }}"
 
     - name: Change MySQL
-      ansible.builtin.shell: echo "alter user 'root'@'localhost' IDENTIFIED BY '{{MYSQL_PASSWORD}}';" | mysql --connect-expired-password -uroot -p"{{DEFAULT_PASS}}"
+      ansible.builtin.shell: echo "ALTER USER 'root'@'localhost' IDENTIFIED BY '{{MYSQL_PASSWORD}}';" | mysql --connect-expired-password -uroot -p"{{DEFAULT_PASS}}"
+
+- name: Check Validate plugin exists
+  ansible.builtin.shell: echo "uninstall plugin validate_password;" | mysql -uroot -p{{MYSQL_PASSWORD}}
+  ignore_errors: yes
 
 
 
