@@ -1,14 +1,14 @@
-- name: Copy MySQl repo file
+- name: Copy MySQL repo file
   ansible.builtin.copy:
     src: mysql.repo
     dest: /etc/yum.repos.d/mysql.repo
 
-- name: Install MySQl Server
+- name: Install MySQL Server
   ansible.builtin.yum:
     name: mysql-community-server
     state: installed
 
-- name: Start MySql Service
+- name: Start MySQL Service
   ansible.builtin.systemd:
    name: mysqld
    state: restarted
