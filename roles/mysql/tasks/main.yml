@@ -36,8 +36,8 @@
     filter: version
 
   rescue:
-     name: Change MySQL
-     mysql_user:
+  - name: Change MySQL
+    mysql_user:
       name: root
       password: "{{ MYSQL_PASS }}"
       update_password: always
