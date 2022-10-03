@@ -21,9 +21,9 @@
   block:
   - name: Get MySQL version to check the DB Connection
     mysql_info:
-    login_user: root
-    login_password: "{{MYSQL_PASSWORD}}"
-    filter: version
+      login_user: root
+      login_password: "{{MYSQL_PASSWORD}}"
+      filter: version
 
   rescue:
     - name: Load MYSQL Log File
