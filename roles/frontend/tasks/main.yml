@@ -20,7 +20,7 @@
     src: /tmp/frontend-main/static/
     dest: /usr/share/nginx/html
     remote_src: yes
-   notify: Restart Nginx Service
+   
 
 - name: Copy RoboShop Config file
   ansible.builtin.template:
