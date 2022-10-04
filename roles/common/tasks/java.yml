@@ -11,6 +11,8 @@
 
 - name: Install Maven dependencies
   ansible.builtin.shell: mvn clean package && mv target/shipping-1.0.jar shipping.jar
+  args:
+     chdir: /home/roboshop/{{COMPONENT}}
   become_user: roboshop
 
 - name: Include SystemD
