@@ -24,6 +24,7 @@
   roles:
     - mysql
 #- name: Setup RoboShop
+#  hosts:  RABBITMQ
 #  become: yes
 #  roles:
 #   - rabbitmq
@@ -32,10 +33,11 @@
   become: yes
   roles:
     - redis
-#  hosts:  SHIPPING
-#  become: yes
-#  roles:
-#    - shipping
+- name: Setup RoboShop
+  hosts:  SHIPPING
+  become: yes
+  roles:
+    - shipping
 #- name: Setup RoboShop
 #  hosts:  PAYMENT
 #  become: yes
