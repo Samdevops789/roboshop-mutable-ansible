@@ -15,7 +15,6 @@ rule_files:
 scrape_configs:
   - job_name: "prometheus"
     static_configs:
-      - targets:
-         - "34.227.195.249:9090"
+      - targets: ["34.227.195.249:9100"]
 
 
