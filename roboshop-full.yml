@@ -43,8 +43,8 @@
   become: yes
   roles:
    - payment
-- name: Setup RoboShop
-  hosts:  DISPATCH
-  become: yes
-  roles:
-    - dispatch
+#- name: Setup RoboShop
+#  hosts:  DISPATCH
+#  become: yes
+#  roles:
+#    - dispatch
