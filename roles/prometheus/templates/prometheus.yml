@@ -3,11 +3,10 @@ global:
   evaluation_interval: 15s
 
 alerting:
- alertmanagers:
+  alertmanagers:
     - static_configs:
         - targets:
-        - localhost: 9090
-
+            - localhost:9093
 
 rule_files:
   - alert-rules.yml
