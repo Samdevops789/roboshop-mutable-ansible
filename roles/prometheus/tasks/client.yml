@@ -1,2 +1,2 @@
 - name: Install Prometheus Node
-  ansible.builtin.shel:  labauto prometheus-node-exporter
+  ansible.builtin.shel: labauto prometheus-node-exporter
