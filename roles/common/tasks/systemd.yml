@@ -9,3 +9,12 @@
     state: restarted
     enabled: yes
     daemon-reload: yes
+
+
+- name: Install botocore and boto3
+  ansible.builtin.pip:
+   name: "{{item}}"
+   executable: pip3
+   loop:
+      - botocore
+      - boto3
