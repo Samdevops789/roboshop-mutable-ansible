@@ -1,30 +1,30 @@
-- name: Copy MySQL repo file
+- name: Copy mysql Repo file
   ansible.builtin.copy:
     src: mysql.repo
     dest: /etc/yum.repos.d/mysql.repo
 
-- name: Install MySQL Server
+- name: Install MYSQL Server
   ansible.builtin.yum:
     name:
       - mysql-community-server
       - MySQL-python
     state: installed
 
-- name: Start MySQL Service
+- name: Restart MYSQL service
   ansible.builtin.systemd:
     name: mysqld
     state: restarted
     enabled: yes
 
-- name: Check Root Default Password
+- name: Check root default password
   block:
-    - name: Get MySQL version to check the DB Connection
+    - name: Get MYSQL version to check th DB connection
       mysql_info:
         login_user: root
         login_password: "{{MYSQL_PASSWORD}}"
         filter: version
   rescue:
-    - name: Load MYSQL Log File
+    - name: Load mysql log file
       ansible.builtin.slurp:
         src: /var/log/mysqld.log
       register: mysql_log
@@ -33,7 +33,7 @@
       ansible.builtin.set_fact:
         DEFAULT_PASS: "{{mysql_log['content'] | b64decode | regex_findall('.*temporary password.*') | join(' ') |split(' ') | last }}"
 
-    - name: Change MySQL
+    - name: Change MYSQL password
       ansible.builtin.shell: echo "ALTER USER 'root'@'localhost' IDENTIFIED BY '{{MYSQL_PASSWORD}}';" | mysql --connect-expired-password -uroot -p"{{DEFAULT_PASS}}"
 
 - name: Check Validate plugin exists
@@ -53,8 +53,6 @@
     target: /tmp/mysql-main/shipping.sql
     login_user: root
     login_password: "{{MYSQL_PASSWORD}}"
-
-
 
 
 
