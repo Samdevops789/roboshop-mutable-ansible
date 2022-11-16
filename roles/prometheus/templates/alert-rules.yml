@@ -1,4 +1,4 @@
-- groups:
+groups:
    - name: Alerts
      rules:
        - alert: InstanceDown
