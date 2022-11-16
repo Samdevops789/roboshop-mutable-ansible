@@ -23,7 +23,7 @@
     delay: 10
     timeout: 30
 
-- name: Copy Alert Manager Config
+- name: Copy Alert Manager Configuration file
   ansible.builtin.template:
     src: alertmanager.yml
     dest: /opt/alertmanager/alertmanager.yml
