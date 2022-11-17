@@ -7,8 +7,8 @@ groups:
         labels:
           severity: critical
         annotations: { % raw % }
-          summary: "Instance Down - [{{ $labels.instance}}]"\n
-          description: "Instance Down - [{{ $labels.instance}}]"\n { % endraw % }
+          summary: \"Instance Down - [{{ $labels.instance}}]"\n
+          description: \"Instance Down - [{{ $labels.instance}}]\"\n { % endraw % }\n\n
 
 { % for component in COMPONENTS % }
       - alert: Service Down - {{component}}
@@ -17,8 +17,8 @@ groups:
         labels:
           severity: critical
         annotations:  { % raw % }
-          summary: "Instance Down - [{{ $labels.instance}}]"\n
-          description: "Instance Down - [{{ $labels.instance}}]"\n { % endraw % }
+          summary: \"Instance Down - [{{ $labels.instance}}]"\n
+          description: \"Instance Down - [{{ $labels.instance}}]\"\n { % endraw % }\n\n
 
 { % endfor % }
 
