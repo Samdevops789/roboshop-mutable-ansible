@@ -11,7 +11,7 @@ groups:
           description: "Instance Down - [{{ $labels.instance}}]" {% endraw %}
 
 
-         { % for component in COMPONENTS % }
+  { % for component in COMPONENTS % }
        - alert: Service Down - {{component}}
          expr: node_systemd_unit_state{name="{{component}}.service", state="active"} < 1
          for: 1m
@@ -21,6 +21,6 @@ groups:
            summary: "Instance Down - [{{ $labels.instance}}]"
            description: "Instance Down - [{{ $labels.instance}}]" { % endraw % }
 
-          { % endfor % }
+  { % endfor % }
 
 
