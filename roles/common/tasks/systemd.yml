@@ -18,4 +18,9 @@
     enabled: yes
     daemon-reload: yes
 
+- name: Include Filebeat Installation
+  ansible.builtin.include_role:
+    name: elk
+    tasks_from: filebeat
+
 
